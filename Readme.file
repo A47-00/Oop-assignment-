@@ -1,0 +1,50 @@
+```python
+# Activity 1: Smartphone Class
+
+class Smartphone:
+    def __init__(self, brand, model, storage):
+        self.brand = brand
+        self.model = model
+        self.storage = storage
+        self.is_on = False
+
+    def power_on(self):
+        self.is_on = True
+        print(f"{self.brand} {self.model} is now on.")
+
+    def power_off(self):
+        self.is_on = False
+        print(f"{self.brand} {self.model} is now off.")
+
+    def take_photo(self):
+        if self.is_on:
+            print("Click! Photo taken.")
+        else:
+            print("Please power on the phone first.")
+
+class GamingPhone(Smartphone):  # Inheritance
+    def __init__(self, brand, model, storage, cooling_system):
+        super().__init__(brand, model, storage)
+        self.cooling_system = cooling_system
+
+    def activate_cooling(self):
+        print(f"Cooling system activated: {self.cooling_system}")
+
+
+# Activity 2: Polymorphism Challenge
+
+class Animal:
+    def move(self):
+        pass  # To be overridden
+
+class Dog(Animal):
+    def move(self):
+        print("Running on four legs.")
+
+class Fish(Animal):
+    def move(self):
+        print("Swimming in water.")
+
+class Bird(Animal):
+    def move(self):
+        print("Flying in the sky.")
